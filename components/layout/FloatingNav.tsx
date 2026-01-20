@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Phone } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
@@ -11,48 +11,56 @@ function cn(...inputs: ClassValue[]) {
 }
 
 const navItems = [
-  { label: 'Home', href: '#' },
-  { label: 'Fleet', href: '#fleet' },
-  { label: 'Services', href: '#services' },
-  { label: 'Projects', href: '#projects' },
+  { label: 'HOME', href: '#' },
+  { label: 'FLEET', href: '#fleet' },
+  { label: 'SERVICES', href: '#services' },
+  { label: 'PROJECTS', href: '#projects' },
+  { label: 'ABOUT', href: '#about' },
 ];
 
 export const FloatingNav: React.FC = () => {
-  const { scrollY } = useScroll();
-  const scale = useTransform(scrollY, [0, 100], [1, 0.95]);
-  const [activeTab, setActiveTab] = useState('Home');
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <motion.nav
-      style={{ scale }}
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 px-4 py-2 bg-[#FDFCF8]/70 backdrop-blur-xl border border-white/20 shadow-sm rounded-full"
+    <motion.header
+      className={cn(
+        "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex items-center justify-between",
+        scrolled ? "bg-white/80 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6"
+      )}
     >
-      <div className="flex items-center gap-2 pl-2">
-        <Logo className="w-10 h-12" />
+      {/* Logo Section */}
+      <div className="flex items-center gap-3">
+        <Logo className="w-8 h-8 md:w-10 md:h-10" />
+        <span className="text-xl font-bold tracking-tighter text-[#0A2540] hidden md:block">SEAMAX</span>
       </div>
 
-      <div className="hidden md:flex items-center gap-1">
+      {/* Nav Links - Center */}
+      <div className="hidden md:flex items-center gap-8">
         {navItems.map((item) => (
           <a
             key={item.label}
             href={item.href}
-            onClick={() => setActiveTab(item.label)}
-            className={cn(
-              "px-4 py-2 text-xs font-mono tracking-widest uppercase transition-colors rounded-full",
-              activeTab === item.label ? "text-[#0F172A] bg-black/5" : "text-[#64748B] hover:text-[#0A2540]"
-            )}
+            className="text-[10px] font-mono tracking-[0.2em] font-medium text-[#0A2540] hover:text-[#0F172A]/70 transition-colors uppercase"
           >
             {item.label}
           </a>
         ))}
       </div>
 
+      {/* Action Button - Right */}
       <div className="flex items-center gap-2">
-        <button className="flex items-center gap-2 px-5 py-2.5 bg-[#0A2540] text-white rounded-full text-xs font-mono tracking-widest uppercase hover:bg-[#0F172A] transition-all">
-          <Phone className="w-3 h-3" />
+        <button className="flex items-center gap-2 px-6 py-2.5 bg-[#0A2540] text-white rounded-full text-[10px] font-mono tracking-widest uppercase hover:bg-[#0F172A] transition-all shadow-lg shadow-[#0A2540]/20">
           Contact
         </button>
       </div>
-    </motion.nav>
+    </motion.header>
   );
 };
