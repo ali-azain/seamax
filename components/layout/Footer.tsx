@@ -40,13 +40,26 @@ export const Footer: React.FC = () => {
           <div className="md:pl-12 border-l border-white/5">
             <h5 className="text-[10px] font-mono tracking-widest uppercase text-white/40 mb-8">Contact</h5>
             <ul className="space-y-4 text-sm text-white/60">
-              <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-white/40" />
-                <a href="tel:+922132850170" className="hover:text-white">+92 21 32850170</a>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-white/40 mt-1 shrink-0" />
+                <address className="not-italic hover:text-white transition-colors">
+                  Suite # 4, Al Rehman Trade Avenue,<br />
+                  15 Timber Pond, Keamari,<br />
+                  Karachi, Pakistan.
+                </address>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-white/40" />
-                <a href="mailto:seamax@cyber.net.pk" className="hover:text-white">seamax@cyber.net.pk</a>
+                <Phone className="w-4 h-4 text-white/40 shrink-0" />
+                <div className="flex flex-col">
+                  <a href="tel:+922132850170" className="hover:text-white">+92 21 32850170 - 71</a>
+                </div>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-white/40 shrink-0" />
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:seamax@cyber.net.pk" className="hover:text-white">seamax@cyber.net.pk</a>
+                  <a href="mailto:info@seamax.com.pk" className="hover:text-white">info@seamax.com.pk</a>
+                </div>
               </li>
               <li className="pt-4">
                 <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white text-[9px] font-mono tracking-widest rounded-full uppercase">

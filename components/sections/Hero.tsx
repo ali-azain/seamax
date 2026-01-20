@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
           className="mb-8"
         >
           <span className="text-[10px] md:text-xs font-mono tracking-[0.4em] uppercase text-[#64748B]">
-            Est. 1984 &nbsp;//&nbsp; Global Offshore Operations
+            Est. 2008 &nbsp;//&nbsp; Global Offshore Operations
           </span>
         </motion.div>
 

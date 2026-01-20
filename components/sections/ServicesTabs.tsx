@@ -5,69 +5,97 @@ import { ArrowRight, BarChart3, MapPin, Gauge } from 'lucide-react';
 
 // Mock specific data for each service to populate the "System Specs" card
 const serviceData = {
-  dredging: {
-    title: "Cutter Suction",
-    subtitle: "Precision",
-    description: "Advanced maritime excavation for port expansion and coastal restoration. We deliver environmental compliance with surgical accuracy.",
+  shipping: {
+    title: "Shipping",
+    subtitle: "Agency Services",
+    description: "End-to-end vessel agency and port services. We handle all formalities, ensuring swift turnaround for vessels calling at Karachi Port and Port Qasim.",
+    image: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&q=80",
+    specs: [
+      { label: "Vessel Type", value: "All Classes" },
+      { label: "Coverage", value: "Port Qasim / KPT" },
+      { label: "Service", value: "24/7 Agency" },
+      { label: "Clearance", value: "Customs / Immigration" }
+    ],
+    status: "Active - Karachi Port"
+  },
+  contracting: {
+    title: "Marine Contracting",
+    subtitle: "Beaching Services",
+    description: "Specialized contracting for beaching, flat top barges, and offshore construction equipment leasing. We support major civil works and infrastructure projects.",
     image: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&q=80",
     specs: [
-      { label: "Vessel Type", value: "CSD-500" },
-      { label: "Capacity", value: "2500m³/h" },
-      { label: "Max Depth", value: "30.00 Meters" },
-      { label: "Tier Level", value: "IMO Tier III" }
+      { label: "Equipment", value: "Flat Top Barges" },
+      { label: "Leasing", value: "Short/Long Term" },
+      { label: "Support", value: "Civil Works" },
+      { label: "Crew", value: "Certified Operators" }
     ],
-    status: "Active Operations in North Sea"
+    status: "Project Based"
   },
   salvage: {
-    title: "Heavy Lift",
-    subtitle: "Recovery",
-    description: "Rapid response wreck removal and emergency towage. Equipped with specialized subsea cutting and lifting gear for depths up to 300m.",
+    title: "Salvage",
+    subtitle: "Wreck Removal",
+    description: "Rapid response emergency recovery and wreck removal operations. Successfully executed complex operations including the Al Akbar II wreck removal.",
     image: "https://images.unsplash.com/photo-1605218427306-022ba95b9ab2?auto=format&fit=crop&q=80",
     specs: [
       { label: "Lift Capacity", value: "1200 Tons" },
-      { label: "Crane Reach", value: "45 Meters" },
-      { label: "Response Time", value: "< 4 Hours" },
-      { label: "Class", value: "DNV-GL" }
+      { label: "Experience", value: "High Stakes" },
+      { label: "Response", value: "Emergency Team" },
+      { label: "Safety", value: "ISO Certified" }
     ],
     status: "Standby - Arabian Sea"
   },
+  diving: {
+    title: "Diving",
+    subtitle: "Underwater Maintenance",
+    description: "Professional diving services for hull cleaning, underwater inspection, and maintenance. Our certified divers ensure fleet integrity without dry docking.",
+    image: "https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&q=80",
+    specs: [
+      { label: "Depth", value: "Up to 100m" },
+      { label: "Team", value: "Certified Divers" },
+      { label: "Services", value: "Hull Cleaning" },
+      { label: "Equipment", value: "Latest Gear" }
+    ],
+    status: "On Call"
+  },
+  dredging: {
+    title: "Dredging",
+    subtitle: "Reclamation Works",
+    description: "Cutter suction dredging and reclamation works for channel maintenance and port deepening. We own and operate versatile dredgers for demanding requirements.",
+    image: "https://images.unsplash.com/photo-1559051938-166299d63f25?auto=format&fit=crop&q=80",
+    specs: [
+      { label: "Type", value: "Cutter Suction" },
+      { label: "Capacity", value: "High Volume" },
+      { label: "Project", value: "Capital/Maintenance" },
+      { label: "Depth", value: "Channel Deepening" }
+    ],
+    status: "Active Operations"
+  },
   pilotage: {
-    title: "Harbor",
-    subtitle: "Navigation",
-    description: "Precision vessel maneuvering in high-traffic commercial ports. Our pilots ensure zero-incident docking operations 24/7.",
+    title: "Pilot Boat",
+    subtitle: "Services",
+    description: "Fleet of versatile pilot boats including 20-knot cruisers. We provide safe personnel transfer and pilotage services for Byco Terminals and other clients.",
     image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&q=80",
     specs: [
-      { label: "Fleet Size", value: "12 BOATS" },
-      { label: "Max Speed", value: "35 Knots" },
-      { label: "License", value: "Master Mariner" },
-      { label: "Range", value: "200 NM" }
+      { label: "Fleet", value: "Pilot Boats" },
+      { label: "Speed", value: "20 Knots" },
+      { label: "Client", value: "Byco Terminals" },
+      { label: "Ops Area", value: "SPM / Anchorage" }
     ],
-    status: "Operational - Port Qasim"
-  },
-  contracting: {
-    title: "Marine",
-    subtitle: "Logistics",
-    description: "End-to-end offshore supply chain management. From personnel transfer to equipment hauling, we bridge the gap between shore and sea.",
-    image: "https://images.unsplash.com/photo-1559136555-930d72f1d3d5?auto=format&fit=crop&q=80",
-    specs: [
-      { label: "Deck Space", value: "450 m²" },
-      { label: "Passengers", value: "60 PAX" },
-      { label: "Deadweight", value: "1500 DWT" },
-      { label: "Endurance", value: "21 Days" }
-    ],
-    status: "Contracted - 3 Years"
+    status: "Operational"
   }
 };
 
 const tabs = [
-  { id: 'dredging', label: 'Dredging' },
+  { id: 'shipping', label: 'Shipping' },
+  { id: 'contracting', label: 'Contracting' },
   { id: 'salvage', label: 'Salvage' },
-  { id: 'pilotage', label: 'Pilotage' },
-  { id: 'contracting', label: 'Contracting' }
+  { id: 'diving', label: 'Diving' },
+  { id: 'dredging', label: 'Dredging' },
+  { id: 'pilotage', label: 'Pilot Boat' }
 ];
 
 export const ServicesTabs: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<keyof typeof serviceData>('dredging');
+  const [activeTab, setActiveTab] = useState<keyof typeof serviceData>('shipping');
   const data = serviceData[activeTab];
 
   return (
