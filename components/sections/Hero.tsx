@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
         className="relative mx-4 md:mx-12 h-[60vh] md:h-[70vh] rounded-[2rem] overflow-hidden group shadow-2xl shadow-indigo-900/10"
       >
         <img
-          src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&q=80"
+          src="/seamax/images/hero-tanker.png"
           alt="Seamax Fleet Vessel"
           className="w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-[2s]"
         />

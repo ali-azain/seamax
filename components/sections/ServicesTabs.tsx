@@ -9,7 +9,7 @@ const serviceData = {
     title: "Shipping",
     subtitle: "Agency Services",
     description: "End-to-end vessel agency and port services. We handle all formalities, ensuring swift turnaround for vessels calling at Karachi Port and Port Qasim.",
-    image: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&q=80",
+    image: "/seamax/images/hero-tanker.png",
     specs: [
       { label: "Vessel Type", value: "All Classes" },
       { label: "Coverage", value: "Port Qasim / KPT" },
@@ -22,7 +22,7 @@ const serviceData = {
     title: "Marine Contracting",
     subtitle: "Beaching Services",
     description: "Specialized contracting for beaching, flat top barges, and offshore construction equipment leasing. We support major civil works and infrastructure projects.",
-    image: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&q=80",
+    image: "/seamax/images/crane-barge.png",
     specs: [
       { label: "Equipment", value: "Flat Top Barges" },
       { label: "Leasing", value: "Short/Long Term" },
@@ -35,7 +35,7 @@ const serviceData = {
     title: "Salvage",
     subtitle: "Wreck Removal",
     description: "Rapid response emergency recovery and wreck removal operations. Successfully executed complex operations including the Al Akbar II wreck removal.",
-    image: "https://images.unsplash.com/photo-1605218427306-022ba95b9ab2?auto=format&fit=crop&q=80",
+    image: "/seamax/images/tug-harmony.png",
     specs: [
       { label: "Lift Capacity", value: "1200 Tons" },
       { label: "Experience", value: "High Stakes" },
@@ -48,7 +48,7 @@ const serviceData = {
     title: "Diving",
     subtitle: "Underwater Maintenance",
     description: "Professional diving services for hull cleaning, underwater inspection, and maintenance. Our certified divers ensure fleet integrity without dry docking.",
-    image: "https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&q=80",
+    image: "/seamax/images/tug-explorer.png",
     specs: [
       { label: "Depth", value: "Up to 100m" },
       { label: "Team", value: "Certified Divers" },
@@ -61,7 +61,7 @@ const serviceData = {
     title: "Dredging",
     subtitle: "Reclamation Works",
     description: "Cutter suction dredging and reclamation works for channel maintenance and port deepening. We own and operate versatile dredgers for demanding requirements.",
-    image: "https://images.unsplash.com/photo-1559051938-166299d63f25?auto=format&fit=crop&q=80",
+    image: "/seamax/images/crane-barge.png",
     specs: [
       { label: "Type", value: "Cutter Suction" },
       { label: "Capacity", value: "High Volume" },
@@ -74,7 +74,7 @@ const serviceData = {
     title: "Pilot Boat",
     subtitle: "Services",
     description: "Fleet of versatile pilot boats including 20-knot cruisers. We provide safe personnel transfer and pilotage services for Byco Terminals and other clients.",
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&q=80",
+    image: "/seamax/images/pilot-boat.png",
     specs: [
       { label: "Fleet", value: "Pilot Boats" },
       { label: "Speed", value: "20 Knots" },
